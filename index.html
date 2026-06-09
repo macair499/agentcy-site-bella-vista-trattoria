@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella Vista Trattoria — Handmade Pasta & Wood-Fired Cooking | Hayes Valley, SF</title>
+<meta name="description" content="Bella Vista Trattoria — a family-run Italian trattoria in Hayes Valley, San Francisco. 18 years of handmade pasta and wood-fired classics. 4.6 stars on Yelp. Reserve your table tonight.">
+<style>
+  :root{
+    --wine:#6b1f1f; --wine-dark:#4a1414; --cream:#fdf6ec; --gold:#c9a14a;
+    --char:#2b2320; --olive:#5d6342;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:Georgia,'Times New Roman',serif;color:var(--char);background:var(--cream);line-height:1.6;}
+  h1,h2,h3{font-family:'Palatino Linotype','Book Antiqua',Georgia,serif;letter-spacing:.5px;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:20;background:rgba(74,20,20,.96);color:var(--cream);}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;max-width:1080px;margin:0 auto;}
+  .brand{font-size:1.25rem;color:var(--gold);font-weight:bold;}
+  .nav a.link{margin-left:18px;font-size:.95rem;color:var(--cream);}
+  .nav a.link:hover{color:var(--gold);}
+  .nav .links{display:none;}
+  @media(min-width:760px){.nav .links{display:block;}}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(rgba(43,35,32,.72),rgba(74,20,20,.82)),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect width="60" height="60" fill="%234a1414"/><circle cx="30" cy="30" r="2" fill="%23c9a14a" opacity="0.25"/></svg>');
+    color:var(--cream);text-align:center;padding:96px 22px 88px;
+  }
+  .hero .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.8rem;margin-bottom:14px;}
+  .hero h1{font-size:2.7rem;line-height:1.15;margin-bottom:16px;}
+  .hero .tag{font-size:1.2rem;font-style:italic;max-width:640px;margin:0 auto 26px;color:#f3e3cf;}
+  .stars{color:var(--gold);font-size:1.1rem;margin-bottom:30px;}
+  .btn{display:inline-block;background:var(--gold);color:var(--wine-dark);font-weight:bold;
+    padding:14px 30px;border-radius:40px;font-family:Georgia,serif;letter-spacing:.5px;transition:transform .15s,background .2s;}
+  .btn:hover{transform:translateY(-2px);background:#dab65c;}
+  .btn.ghost{background:transparent;border:2px solid var(--gold);color:var(--gold);margin-left:10px;}
+  @media(min-width:760px){.hero h1{font-size:3.6rem;}}
+
+  section{padding:64px 0;}
+  .section-title{text-align:center;color:var(--wine);font-size:2rem;margin-bottom:8px;}
+  .section-sub{text-align:center;color:var(--olive);font-style:italic;margin-bottom:40px;}
+
+  /* OFFERINGS */
+  .cards{display:grid;gap:24px;grid-template-columns:1fr;}
+  @media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr);}}
+  .card{background:#fff;border:1px solid #ecdfca;border-radius:12px;padding:30px 24px;text-align:center;box-shadow:0 6px 18px rgba(74,20,20,.06);}
+  .card .ic{font-size:2.2rem;margin-bottom:12px;}
+  .card h3{color:var(--wine);margin-bottom:10px;font-size:1.25rem;}
+
+  /* STORY / SOCIAL PROOF */
+  .story{background:var(--wine);color:var(--cream);}
+  .story .wrap{display:grid;gap:34px;grid-template-columns:1fr;align-items:center;}
+  @media(min-width:760px){.story .wrap{grid-template-columns:1.3fr 1fr;}}
+  .story h2{color:var(--gold);font-size:2rem;margin-bottom:14px;}
+  .story p{color:#f3e3cf;margin-bottom:14px;}
+  .quote{background:var(--wine-dark);border-left:4px solid var(--gold);padding:24px;border-radius:10px;}
+  .quote p{font-style:italic;font-size:1.1rem;margin-bottom:10px;}
+  .quote .who{color:var(--gold);font-style:normal;font-size:.9rem;}
+
+  /* HOURS / LOCATION */
+  .info{display:grid;gap:30px;grid-template-columns:1fr;}
+  @media(min-width:760px){.info{grid-template-columns:1fr 1fr;}}
+  .info .box{background:#fff;border:1px solid #ecdfca;border-radius:12px;padding:30px;}
+  .info h3{color:var(--wine);margin-bottom:16px;font-size:1.4rem;}
+  .hours-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed #e6d7bf;}
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row .day{color:var(--char);}
+  .hours-row .time{color:var(--olive);}
+  .closed{color:#9a4b3f;font-style:italic;}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg,var(--wine),var(--wine-dark));color:var(--cream);text-align:center;}
+  .cta h2{font-size:2.2rem;color:var(--gold);margin-bottom:14px;}
+  .cta p{max-width:560px;margin:0 auto 26px;color:#f3e3cf;}
+  .cta .phone{font-size:1.5rem;color:#fff;display:block;margin-top:18px;}
+
+  footer{background:var(--char);color:#cdbfb0;text-align:center;padding:30px 22px;font-size:.9rem;}
+  footer a:hover{color:var(--gold);}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">Bella Vista Trattoria</div>
+    <nav class="links">
+      <a class="link" href="#menu">Our Kitchen</a>
+      <a class="link" href="#story">Our Story</a>
+      <a class="link" href="#visit">Hours &amp; Location</a>
+      <a class="link" href="#reserve">Reserve</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Hayes Valley · San Francisco · Since 2008</div>
+  <h1>Handmade Pasta.<br>Wood-Fired Soul.</h1>
+  <p class="tag">An 18-year family trattoria where the pasta is rolled by hand each morning and the oven never stops glowing.</p>
+  <div class="stars">★★★★★ &nbsp;4.6 on Yelp · A Hayes Valley favorite</div>
+  <div>
+    <a class="btn" href="#reserve">Reserve a Table</a>
+    <a class="btn ghost" href="#menu">See What We Cook</a>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2 class="section-title">What We Do Best</h2>
+    <p class="section-sub">Simple, honest Italian cooking — made by the same family for nearly two decades.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ic">🍝</div>
+        <h3>Handmade Pasta</h3>
+        <p>Tagliatelle, ravioli, and gnocchi rolled, cut, and filled by hand every morning — never from a box.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🔥</div>
+        <h3>Wood-Fired Oven</h3>
+        <p>Blistered crusts and slow-roasted classics straight from our signature wood-fired oven.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🍷</div>
+        <h3>Family Table</h3>
+        <p>A warm, neighborly room where regulars are greeted by name and weekend dinners feel like home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <div>
+      <h2>Our Story</h2>
+      <p>For 18 years, Bella Vista Trattoria has been run by one family in the heart of Hayes Valley. What began as a small neighborhood dining room is now a San Francisco institution for people who love real Italian food without the fuss.</p>
+      <p>We've never chased trends. We just keep rolling pasta by hand, firing the oven, and pouring good wine for the neighbors who've become friends.</p>
+    </div>
+    <div class="quote">
+      <p>"The best handmade pasta in the neighborhood — it tastes like someone's nonna is in the kitchen."</p>
+      <span class="who">— from our 4.6★ Yelp reviews</span>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <h2 class="section-title">Hours &amp; Location</h2>
+    <p class="section-sub">In the heart of Hayes Valley — walk in, or book ahead for the weekend.</p>
+    <div class="info">
+      <div class="box">
+        <h3>Hours</h3>
+        <div class="hours-row"><span class="day">Monday</span><span class="time closed">Closed</span></div>
+        <div class="hours-row"><span class="day">Tuesday – Thursday</span><span class="time">5:00 PM – 10:00 PM</span></div>
+        <div class="hours-row"><span class="day">Friday</span><span class="time">5:00 PM – 11:00 PM</span></div>
+        <div class="hours-row"><span class="day">Saturday</span><span class="time">4:00 PM – 11:00 PM</span></div>
+        <div class="hours-row"><span class="day">Sunday</span><span class="time">4:00 PM – 9:00 PM</span></div>
+        <p style="margin-top:14px;font-style:italic;color:var(--olive);">Weekend tables fill fast — reservations recommended.</p>
+      </div>
+      <div class="box">
+        <h3>Find Us</h3>
+        <p><strong>Hayes Valley</strong><br>San Francisco, CA</p>
+        <p style="margin-top:14px;"><strong>Call us:</strong><br><a href="tel:+14155550142">+1 (415) 555-0142</a></p>
+        <p style="margin-top:14px;color:var(--olive);font-style:italic;">Steps from the neighborhood's shops and theaters — perfect before or after a night out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="reserve">
+  <div class="wrap">
+    <h2>Save Your Weekend Table</h2>
+    <p>Don't let the chains down the street take your Saturday night. Call ahead and we'll have your table — and a plate of fresh pasta — waiting.</p>
+    <a class="btn" href="tel:+14155550142">Call to Reserve</a>
+    <span class="phone">+1 (415) 555-0142</span>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Bella Vista Trattoria</strong> · Hayes Valley, San Francisco, CA · Family-run since 2008</p>
+  <p style="margin-top:8px;">★ 4.6 on Yelp &nbsp;·&nbsp; <a href="tel:+14155550142">+1 (415) 555-0142</a></p>
+</footer>
+</body>
+</html>
